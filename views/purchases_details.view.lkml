@@ -382,4 +382,180 @@ view: purchases_details {
     type: count
     drill_fields: [product_name, store_group_name, store_name, customers.customer_id_with_mail]
   }
+
+  measure: Nbre_clients_call {
+    type: count_distinct
+    sql: ${TABLE}."CUSTOMER_ID" ;;
+    filters: [mixity: "CALL"]
+  }
+
+  measure: Nbre_clients_internet {
+    type: count_distinct
+    sql: ${TABLE}."CUSTOMER_ID" ;;
+    filters: [mixity: "INT"]
+  }
+
+  measure: Nbre_clients_mail {
+    type: count_distinct
+    sql: ${TABLE}."CUSTOMER_ID" ;;
+    filters: [mixity: "MAIL"]
+  }
+
+  measure: Nbre_clientss_mixtes {
+    type: count_distinct
+    sql: ${TABLE}."CUSTOMER_ID" ;;
+    filters: [mixity: "MIXTE"]
+  }
+
+  measure: panier_moyen_mixite_non_null {
+    type: number
+    sql: ${CA_mixite_non_null} / ${Nbre_commandes_mixite_non_null} ;;
+  }
+
+  measure: Nbre_commandes_mixite_non_null {
+    type: count_distinct
+    sql: ${TABLE}."ORDER_ID" ;;
+    filters: [mixity: "-NULL"]
+  }
+
+  measure: valeur_client {
+    type: number
+    sql: ${CA} / ${nb_clients} ;;
+  }
+
+  measure: CA {
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+  }
+
+  measure: frequence_d_achat {
+    type: number
+    sql: ${Nbre_commandes} / ${nb_clients} ;;
+  }
+
+  measure: panier_moyen {
+    type: number
+    sql: ${CA} / ${Nbre_commandes} ;;
+  }
+
+  measure: moyenne_des_interactions_digitales {
+    type: average
+    sql: ${nb_contributive_visits} ;;
+  }
+
+  measure: Nbre_commandes {
+    type: count_distinct
+    sql: ${TABLE}."ORDER_ID" ;;
+  }
+
+  measure: nb_clients {
+    type: count_distinct
+    sql: ${TABLE}."CUSTOMER_ID" ;;
+  }
+
+  measure: Onboarding_CRM {
+    type: number
+    sql: ${CA_know} / ${nb_clients_actifs} ;;
+  }
+
+  measure: CA_know {
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+    filters: [is_known: "true"]
+  }
+
+  measure: nb_clients_actifs {
+    type: count_distinct
+    sql: ${TABLE}."CUSTOMER_ID" ;;
+    filters: [is_active_contact: "true"]
+  }
+
+  measure: valeur_client_mixite_non_null {
+    type: number
+    sql: ${CA_mixite_non_null} / ${nb_clients_actifs_mixite_non_null} ;;
+  }
+
+  measure: CA_mixite_non_null {
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+    filters: [mixity: "-NULL" ]
+  }
+
+  measure: nb_clients_actifs_mixite_non_null {
+    type: count_distinct
+    sql: ${TABLE}."CUSTOMER_ID" ;;
+    filters: [mixity: "-NULL"]
+  }
+
+  measure: frequence_d_achat_mixite_non_null {
+    type: number
+    sql: ${nbre_commandes_mixite_non_null} / ${nb_clients_actifs_mixite_non_null} ;;
+  }
+
+  measure: nbre_commandes_mixite_non_null {
+    type: count_distinct
+    sql: ${TABLE}."ORDER_ID" ;;
+    filters: [mixity: "-NULL" ]
+  }
+
+  measure: ca_mail_influence {
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+    filters: [with_contributive_visits: "true"]
+  }
+
+  measure: ca_call {
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+    filters: [mixity: "CALL"]
+  }
+
+  measure: ca_internet {
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+    filters: [mixity: "INT"]
+  }
+
+  measure: ca_mail {
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+    filters: [mixity: "MAIL"]
+  }
+
+  measure: ca_mixtes {
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+    filters: [mixity: "MIXTE"]
+  }
+
+  measure: Nbre_commandes_call {
+    type: count_distinct
+    sql: ${TABLE}."ORDER_ID" ;;
+    filters: [mixity: "CALL"]
+  }
+
+  measure: Nbre_commandes_internet {
+    type: count_distinct
+    sql: ${TABLE}."ORDER_ID" ;;
+    filters: [mixity: "INT"]
+  }
+
+  measure: Nbre_commandes_mail {
+    type: count_distinct
+    sql: ${TABLE}."ORDER_ID" ;;
+    filters: [mixity: "MAIL"]
+  }
+
+  measure: Nbre_commandes_mixtes {
+    type: count_distinct
+    sql: ${TABLE}."ORDER_ID" ;;
+    filters: [mixity: "MIXTE"]
+  }
+
+  measure: CA_Periode_reference{
+    type: sum
+    sql: ${TABLE}."LINE_AMOUNT" ;;
+    filters: [is_purchase_in_ref_period: "true", top_product_10rk: "true"]
+  }
+
 }
