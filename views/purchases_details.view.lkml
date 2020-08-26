@@ -404,7 +404,7 @@ view: purchases_details {
   measure: Nbre_clientss_mixtes {
     type: count_distinct
     sql: ${TABLE}."CUSTOMER_ID" ;;
-    filters: [mixity: "MIXTE"]
+    filters: [mixity: "mixte"]
   }
 
   measure: panier_moyen_mixite_non_null {
@@ -525,7 +525,7 @@ view: purchases_details {
   measure: ca_mixtes {
     type: sum
     sql: ${TABLE}."LINE_AMOUNT" ;;
-    filters: [mixity: "MIXTE"]
+    filters: [mixity: "mixte"]
   }
 
   measure: Nbre_commandes_call {
