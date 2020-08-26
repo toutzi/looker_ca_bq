@@ -378,7 +378,7 @@ view: customers {
 
   measure: nb_clients {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID_MASTER" ;;
+    sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
     filters: [mixity: "-NULL"]
   }
 
