@@ -385,25 +385,25 @@ view: purchases_details {
 
   measure: Nbre_clients_call {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.CUSTOMER_ID ;;
     filters: [mixity: "CALL"]
   }
 
   measure: Nbre_clients_internet {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.CUSTOMER_ID ;;
     filters: [mixity: "INT"]
   }
 
   measure: Nbre_clients_mail {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.CUSTOMER_ID ;;
     filters: [mixity: "MAIL"]
   }
 
   measure: Nbre_clientss_mixtes {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.CUSTOMER_ID ;;
     filters: [mixity: "mixte"]
   }
 
@@ -414,7 +414,7 @@ view: purchases_details {
 
   measure: Nbre_commandes_mixite_non_null {
     type: count_distinct
-    sql: ${TABLE}."ORDER_ID" ;;
+    sql: ${TABLE}.ORDER_ID ;;
     filters: [mixity: "-NULL"]
   }
 
@@ -425,7 +425,7 @@ view: purchases_details {
 
   measure: CA {
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
   }
 
   measure: frequence_d_achat {
@@ -445,12 +445,12 @@ view: purchases_details {
 
   measure: Nbre_commandes {
     type: count_distinct
-    sql: ${TABLE}."ORDER_ID" ;;
+    sql: ${TABLE}.ORDER_ID ;;
   }
 
   measure: nb_clients {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.CUSTOMER_ID ;;
   }
 
   measure: Onboarding_CRM {
@@ -460,13 +460,13 @@ view: purchases_details {
 
   measure: CA_know {
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
     filters: [is_known: "true"]
   }
 
   measure: nb_clients_actifs {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.CUSTOMER_ID ;;
     filters: [is_active_contact: "true"]
   }
 
@@ -477,13 +477,13 @@ view: purchases_details {
 
   measure: CA_mixite_non_null {
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
     filters: [mixity: "-NULL" ]
   }
 
   measure: nb_clients_actifs_mixite_non_null {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.CUSTOMER_ID ;;
     filters: [mixity: "-NULL"]
   }
 
@@ -494,67 +494,67 @@ view: purchases_details {
 
   measure: nbre_commandes_mixite_non_null {
     type: count_distinct
-    sql: ${TABLE}."ORDER_ID" ;;
+    sql: ${TABLE}.ORDER_ID ;;
     filters: [mixity: "-NULL" ]
   }
 
   measure: ca_mail_influence {
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
     filters: [with_contributive_visits: "true"]
   }
 
   measure: ca_call {
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
     filters: [mixity: "CALL"]
   }
 
   measure: ca_internet {
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
     filters: [mixity: "INT"]
   }
 
   measure: ca_mail {
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
     filters: [mixity: "MAIL"]
   }
 
   measure: ca_mixtes {
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
     filters: [mixity: "mixte"]
   }
 
   measure: Nbre_commandes_call {
     type: count_distinct
-    sql: ${TABLE}."ORDER_ID" ;;
+    sql: ${TABLE}.ORDER_ID ;;
     filters: [mixity: "CALL"]
   }
 
   measure: Nbre_commandes_internet {
     type: count_distinct
-    sql: ${TABLE}."ORDER_ID" ;;
+    sql: ${TABLE}.ORDER_ID ;;
     filters: [mixity: "INT"]
   }
 
   measure: Nbre_commandes_mail {
     type: count_distinct
-    sql: ${TABLE}."ORDER_ID" ;;
+    sql: ${TABLE}.ORDER_ID ;;
     filters: [mixity: "MAIL"]
   }
 
   measure: Nbre_commandes_mixtes {
     type: count_distinct
-    sql: ${TABLE}."ORDER_ID" ;;
+    sql: ${TABLE}.ORDER_ID ;;
     filters: [mixity: "MIXTE"]
   }
 
   measure: CA_Periode_reference{
     type: sum
-    sql: ${TABLE}."LINE_AMOUNT" ;;
+    sql: ${TABLE}.LINE_AMOUNT ;;
     filters: [is_purchase_in_ref_period: "true", top_product_10rk: "true"]
   }
 

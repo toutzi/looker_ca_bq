@@ -373,7 +373,7 @@ view: customers {
 
   measure: nb_total_de_contacts {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.CUSTOMER_ID ;;
   }
 
   measure: nb_clients {
@@ -384,7 +384,7 @@ view: customers {
 
   measure: nb_total_de_contacts_maitres {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID_MASTER" ;;
+    sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
   }
 
   measure: Onboarding_CRM {
@@ -394,24 +394,24 @@ view: customers {
 
   measure: nb_clients_actifs_profils_matches {
     type: count_distinct
-    sql: ${TABLE}."PM_CUSTOMER_ID_MASTER" ;;
+    sql: ${TABLE}.PM_CUSTOMER_ID_MASTER ;;
     filters: [is_active_contact: "true"]
   }
 
   measure: nb_clients_actifs {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID_MASTER" ;;
+    sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
     filters: [is_active_contact: "true"]
   }
 
   measure: CA_total_clients {
     type: sum
-    sql: ${TABLE}."CUSTOMER_VALUE" ;;
+    sql: ${TABLE}.CUSTOMER_VALUE ;;
   }
 
   measure: CA_total_mixite_non_null {
     type: sum
-    sql: ${TABLE}."CUSTOMER_VALUE" ;;
+    sql: ${TABLE}.CUSTOMER_VALUE ;;
     filters: [mixity: "-NULL"]
   }
 

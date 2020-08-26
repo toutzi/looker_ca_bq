@@ -354,12 +354,12 @@ view: purchases_history {
 
   measure: Nbre_de_reacheteurs {
     type: count_distinct
-    sql: ${TABLE}."SECOND_ORDER_CUSTOMER_ID_MASTER" ;;
+    sql: ${TABLE}.SECOND_ORDER_CUSTOMER_ID_MASTER ;;
   }
 
   measure: Nbre_contacts_maitres {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID_MASTER" ;;
+    sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
   }
 
   measure: Taux_de_reachat {
@@ -369,34 +369,34 @@ view: purchases_history {
 
   measure: Montant_1er_achat {
     type: average
-    sql: ${TABLE}."FIRST_TOTAL_AMOUNT" ;;
+    sql: ${TABLE}.FIRST_TOTAL_AMOUNT ;;
     filters: [second_order_id: "-NULL"]
   }
 
   measure: Montant_2eme_achat {
     type: average
-    sql: ${TABLE}."SECOND_TOTAL_AMOUNT" ;;
+    sql: ${TABLE}.SECOND_TOTAL_AMOUNT ;;
     filters: [second_order_id: "-NULL"]
   }
 
   measure: Delai_de_reachat_j {
     type: average
-    sql: ${TABLE}."DELTA_12" ;;
+    sql: ${TABLE}.DELTA_12 ;;
   }
 
   measure: Nb_1er_achat {
     type: count_distinct
-    sql: ${TABLE}."FIRST_ORDER_ID" ;;
+    sql: ${TABLE}.FIRST_ORDER_ID ;;
   }
 
   measure: CA_1er_achat {
     type: sum
-    sql: ${TABLE}."FIRST_TOTAL_AMOUNT" ;;
+    sql: ${TABLE}.FIRST_TOTAL_AMOUNT ;;
   }
 
   measure: CA_reachat {
     type: sum
-    sql: ${TABLE}."SECOND_TOTAL_AMOUNT" ;;
+    sql: ${TABLE}.SECOND_TOTAL_AMOUNT ;;
   }
 
   measure: Taux_de_reachat_univers {
@@ -406,19 +406,19 @@ view: purchases_history {
 
   measure: Nbre_de_reacheteurs_first {
     type: count_distinct
-    sql: ${TABLE}."SECOND_ORDER_CUSTOMER_ID" ;;
+    sql: ${TABLE}.SECOND_ORDER_CUSTOMER_ID ;;
     filters: [first_product_universe: "-NULL", first_product_nature: "-NULL", first_product_nature: "N.R", first_product_universe_nb_orders: ">=50" ]
   }
 
   measure: Nbre_contacts_first_product {
     type: count_distinct
-    sql: ${TABLE}."CUSTOMER_ID_MASTER" ;;
+    sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
     filters: [first_product_universe: "-NULL", first_product_nature: "-NULL", first_product_nature: "N.R", first_product_universe_nb_orders: ">=50" ]
   }
 
   measure: Nbre_reachat {
     type: count_distinct
-    sql: ${TABLE}."SECOND_ORDER_ID" ;;
+    sql: ${TABLE}.SECOND_ORDER_ID ;;
     filters: [first_product_universe: "-NULL", second_order_id: "-NULL"]
   }
 
