@@ -24,19 +24,16 @@ explore: customers {
 }
 
 explore: purchases_details {
-<<<<<<< HEAD
  # join: customers {
  #   type: left_outer
  #   sql_on: ${purchases_details.customer_id} = ${customers.customer_id_with_mail} ;;
  #   relationship: many_to_one
  # }
-=======
   # join: customers {
   #  type: left_outer
   #  sql_on: ${purchases_details.customer_id} = ${customers.customer_id_with_mail} ;;
   #  relationship: many_to_one
   # }
->>>>>>> branch 'master' of https://github.com/toutzi/looker_ca_bq
 }
 
 explore: purchases_history {}
