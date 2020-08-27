@@ -13,7 +13,7 @@ persist_with: customers_analytics_bigquery_default_datagroup
 explore: customers {
   join: purchases_details {
     type: left_outer
-    relationship: one_to_many
+    relationship: many_to_one
     sql_on: ${customers.customer_id} = ${purchases_details.customer_id} ;;
   }
  join: purchases_history {
