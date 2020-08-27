@@ -389,7 +389,7 @@ view: customers {
 
   measure: Onboarding_CRM {
     type: number
-    sql: ${nb_clients_actifs_profils_matches} / ${nb_clients_actifs} ;;
+    sql: ${nb_clients_actifs_profils_matches} / ${nb_clients_actifs_1} ;;
   }
 
   measure: nb_clients_actifs_profils_matches {
@@ -398,7 +398,7 @@ view: customers {
     filters: [is_active_contact : "true"]
   }
 
-  measure: nb_clients_actifs {
+  measure: nb_clients_actifs_1 {
     type: count_distinct
     sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
     filters: [is_active_contact: "true"]
