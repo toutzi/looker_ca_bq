@@ -481,6 +481,12 @@ view: purchases_details {
     filters: [mixity: "-NULL" ]
   }
 
+  measure: CA_client {
+    type: sum
+    sql: ${TABLE}.CUSTOMER_VALUE ;;
+    filters: [mixity: "-NULL" ]
+  }
+
   measure: nb_clients_actifs_mixite_non_null {
     type: count_distinct
     sql: ${TABLE}.CUSTOMER_ID ;;
