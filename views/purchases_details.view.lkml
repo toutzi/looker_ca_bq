@@ -501,7 +501,7 @@ view: purchases_details {
   measure: ca_mail_influence {
     type: sum
     sql: ${TABLE}.LINE_AMOUNT ;;
-    filters: [with_contributive_visits: "yes"]
+    filters: [with_contributive_visits: "Yes"]
   }
 
   measure: ca_call {
@@ -555,7 +555,7 @@ view: purchases_details {
   measure: CA_Periode_reference{
     type: sum
     sql: ${TABLE}.LINE_AMOUNT ;;
-    filters: [is_purchase_in_ref_period: "true", top_product_10rk: "true"]
+    filters: [is_purchase_in_ref_period: "Yes", top_product_10rk: "Yes"]
   }
 
 }
