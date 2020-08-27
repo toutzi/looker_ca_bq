@@ -450,7 +450,7 @@ view: purchases_details {
 
   measure: nb_clients {
     type: count_distinct
-    sql: ${TABLE}.purchases_details.customer_id;;
+    sql: ${TABLE}.customer_id;;
   }
 
   measure: Onboarding_CRM {
