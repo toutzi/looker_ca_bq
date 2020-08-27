@@ -395,13 +395,13 @@ view: customers {
   measure: nb_clients_actifs_profils_matches {
     type: count_distinct
     sql: ${TABLE}.PM_CUSTOMER_ID_MASTER ;;
-    filters: [is_active_contact : "true"]
+    filters: [is_active_contact : "Yes"]
   }
 
   measure: nb_clients_actifs {
     type: count_distinct
     sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
-    filters: [is_active_contact: "true"]
+    filters: [is_active_contact: "Yes"]
   }
 
   measure: CA_total_clients {
