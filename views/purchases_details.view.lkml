@@ -453,22 +453,22 @@ view: purchases_details {
     sql: ${TABLE}.purchases_details.customer_id;;
   }
 
-  measure: Onboarding_CRM {
-    type: number
-    sql: ${CA_know} / ${nb_clients_actifs} ;;
-  }
+  #measure: Onboarding_CRM {
+   # type: number
+   # sql: ${CA_know} / ${nb_clients_actifs} ;;
+  #}
 
-  measure: CA_know {
-    type: sum
-    sql: ${TABLE}.LINE_AMOUNT ;;
-    filters: [is_known: "true"]
-  }
+  #measure: CA_know {
+   # type: sum
+   # sql: ${TABLE}.LINE_AMOUNT ;;
+    #filters: [is_known: "true"]
+  #}
 
-  measure: nb_clients_actifs {
-    type: count_distinct
-    sql: ${TABLE}.CUSTOMER_ID ;;
-    filters: [is_active_contact: "true"]
-  }
+  #measure: nb_clients_actifs {
+   # type: count_distinct
+    #sql: ${TABLE}.CUSTOMER_ID ;;
+    #filters: [is_active_contact: "true"]
+  #}
 
   measure: valeur_client_mixite_non_null {
     type: number
@@ -501,7 +501,7 @@ view: purchases_details {
   measure: ca_mail_influence {
     type: sum
     sql: ${TABLE}.LINE_AMOUNT ;;
-    filters: [with_contributive_visits: "true"]
+    filters: [with_contributive_visits: "yes"]
   }
 
   measure: ca_call {
