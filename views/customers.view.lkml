@@ -407,7 +407,7 @@ view: customers {
   measure: CA_total_clients {
     type: sum
     sql: ${TABLE}.CUSTOMER_VALUE ;;
-    value_format: "Euros(2)"
+    value_format: "Eur"
   }
 
   measure: CA_total_mixite_non_null {
