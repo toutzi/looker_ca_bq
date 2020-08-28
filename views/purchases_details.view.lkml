@@ -485,6 +485,7 @@ view: purchases_details {
     type: sum
     sql: ${TABLE}.CUSTOMER_VALUE ;;
     filters: [mixity: "-NULL" ]
+    html: {{ rendered_value | replace: ‘,’, ' ' | replace: ‘.’,‘,’ }} ;;
   }
 
   measure: nb_clients_actifs_mixite_non_null {
