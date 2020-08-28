@@ -407,12 +407,14 @@ view: customers {
   measure: CA_total_clients {
     type: sum
     sql: ${TABLE}.CUSTOMER_VALUE ;;
+    value_format: "#.##0,00 €"
   }
 
   measure: CA_total_mixite_non_null {
     type: sum
     sql: ${TABLE}.CUSTOMER_VALUE ;;
     filters: [mixity: "-NULL"]
+    value_format: "#.##0,00 €"
   }
 
 }
