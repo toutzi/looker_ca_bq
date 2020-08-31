@@ -1,5 +1,5 @@
 view: purchases_history {
-  sql_table_name: `dl.purchases_history`
+  sql_table_name: `dl_webinar.purchases_history`
     ;;
 
   dimension: age {

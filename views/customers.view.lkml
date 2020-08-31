@@ -1,5 +1,5 @@
 view: customers {
-  sql_table_name: `dl.customers`
+  sql_table_name: `dl_webinar.customers`
     ;;
   drill_fields: [customer_id_with_mail]
 

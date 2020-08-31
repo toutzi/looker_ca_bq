@@ -1,5 +1,5 @@
 view: visits {
-  sql_table_name: `dl.visits`
+  sql_table_name: `dl_webinar.visits`
     ;;
 
   dimension: device {

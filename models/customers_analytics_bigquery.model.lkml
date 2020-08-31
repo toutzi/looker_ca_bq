@@ -11,11 +11,13 @@ datagroup: customers_analytics_bigquery_default_datagroup {
 persist_with: customers_analytics_bigquery_default_datagroup
 
 explore: customers {
+
   join: purchases_details {
     type: left_outer
     relationship: one_to_many
     sql_on: CAST(${customers.customer_id}  as string) = ${purchases_details.customer_id} ;;
   }
+
   join: purchases_history {
     type: left_outer
     relationship: one_to_many
@@ -25,16 +27,12 @@ explore: customers {
 }
 
 explore: purchases_details {
- # join: customers {
- #   type: left_outer
- #   sql_on: ${purchases_details.customer_id} = ${customers.customer_id_with_mail} ;;
- #   relationship: many_to_one
- # }
-  # join: customers {
-  #  type: left_outer
-  #  sql_on: ${purchases_details.customer_id} = ${customers.customer_id_with_mail} ;;
-  #  relationship: many_to_one
-  # }
+
+  join: store {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: CAST(${purchases_details.store_id} as string) = ${store.store_id} ;;
+  }
 }
 
 explore: purchases_history {}

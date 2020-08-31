@@ -1,5 +1,5 @@
 view: purchases_details {
-  sql_table_name: `dl.purchases_details`
+  sql_table_name: `dl_webinar.purchases_details`
     ;;
 
   dimension: age_range {
