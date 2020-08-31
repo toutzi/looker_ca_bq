@@ -556,7 +556,7 @@ view: purchases_details {
   measure: Nbre_commandes_mixtes {
     type: count_distinct
     sql: ${TABLE}.ORDER_ID ;;
-    filters: [mixity: "MIXTE"]
+    filters: [mixity: "mixte"]
   }
 
   measure: CA_Periode_reference{
