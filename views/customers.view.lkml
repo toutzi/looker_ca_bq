@@ -370,10 +370,12 @@ view: customers {
     type: count
     drill_fields: [customer_id_with_mail, customers.customer_id_with_mail, customers.count, purchases_details.count]
   }
+
   measure: nb_total_de_contacts {
     type: count_distinct
     sql: ${TABLE}.CUSTOMER_ID ;;
   }
+
   measure: nb_clients {
     type: count_distinct
     sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
@@ -413,6 +415,5 @@ view: customers {
     sql: ${TABLE}.CUSTOMER_VALUE ;;
     filters: [mixity: "-NULL"]
   }
-
 
 }
