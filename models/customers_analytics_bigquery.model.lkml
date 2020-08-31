@@ -10,7 +10,9 @@ datagroup: customers_analytics_bigquery_default_datagroup {
 
 persist_with: customers_analytics_bigquery_default_datagroup
 
-explore: customers {
+explore: customers {}
+
+#explore: customers {
 
  # join: purchases_details {
  #   type: left_outer
@@ -23,7 +25,7 @@ explore: customers {
  #  sql_on: CAST(${customers.customer_id_master} as string) = ${purchases_history.customer_id_master} ;;
   #}
 
-}
+#}
 
 explore: purchases_details {
 

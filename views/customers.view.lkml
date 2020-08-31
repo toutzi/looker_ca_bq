@@ -371,52 +371,5 @@ view: customers {
     drill_fields: [customer_id_with_mail, customers.customer_id_with_mail, customers.count, purchases_details.count]
   }
 
-<<<<<<< HEAD
-  measure: nb_total_de_contacts {
-    type: count_distinct
-    sql: ${TABLE}.CUSTOMER_ID ;;
-  }
 
-  measure: nb_clients {
-    type: count_distinct
-    sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
-    filters: [mixity: "-NULL"]
-  }
-
-  measure: nb_total_de_contacts_maitres {
-    type: count_distinct
-    sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
-  }
-
-  measure: Onboarding_CRM {
-    type: number
-    sql: ${nb_clients_actifs_profils_matches} / ${nb_clients_actifs} ;;
-  }
-
-  measure: nb_clients_actifs_profils_matches {
-    type: count_distinct
-    sql: ${TABLE}.PM_CUSTOMER_ID_MASTER ;;
-    filters: [is_active_contact : "Yes"]
-  }
-
-  measure: nb_clients_actifs {
-    type: count_distinct
-    sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
-    filters: [is_active_contact: "Yes"]
-  }
-
-  measure: CA_total_clients {
-    type: sum
-    sql: ${TABLE}.CUSTOMER_VALUE ;;
-    value_format: "eur"
-  }
-
-  measure: CA_total_mixite_non_null {
-    type: sum
-    sql: ${TABLE}.CUSTOMER_VALUE ;;
-    filters: [mixity: "-NULL"]
-  }
-
-=======
->>>>>>> branch 'master' of https://github.com/toutzi/looker_ca_bq
 }
