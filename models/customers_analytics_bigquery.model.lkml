@@ -31,7 +31,7 @@ explore: purchases_details {
   join: store {
     type: left_outer
     relationship: one_to_many
-    sql_on: CAST(${purchases_details.store_id} as string) = ${store.store_id} ;;
+    sql_on: ${purchases_details.store_id} = ${store.store_id} ;;
   }
 }
 
