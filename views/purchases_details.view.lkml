@@ -500,6 +500,12 @@ view: purchases_details {
     filters: [with_email: "Yes", is_pm: "Yes"]
   }
 
+  measure: contacts_profil_matche_optin {
+    type: count_distinct
+    sql: ${TABLE}.CUSTOMER_ID ;;
+    filters: [with_email: "Yes", is_pm: "Yes", optin_email: "Optin"]
+  }
+
   measure: frequence_d_achat_mixite_non_null {
     type: number
     sql: ${nbre_commandes_mixite_non_null} / ${nb_clients_actifs_mixite_non_null} ;;
