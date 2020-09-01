@@ -22,6 +22,7 @@ view: store {
   dimension: store_name {
     type: string
     sql: ${TABLE}.store_name ;;
+    drill_fields : [latitude, longitude ]
   }
 
   measure: count {
