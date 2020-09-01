@@ -32,7 +32,7 @@ explore: purchases_details {
 
   join: store {
     type: left_outer
-    relationship: one_to_many
+    relationship: many_to_one
     sql_on: ${purchases_details.store_id} = ${store.store_id} ;;
   }
 }
