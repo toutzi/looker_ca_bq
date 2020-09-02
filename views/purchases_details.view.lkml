@@ -226,7 +226,6 @@ view: purchases_details {
   dimension: product_name {
     type: string
     sql: ${TABLE}.product_name ;;
-    drill_fields: [store_name]
   }
 
   dimension: product_nature {
@@ -262,6 +261,7 @@ view: purchases_details {
   dimension: product_universe {
     type: string
     sql: ${TABLE}.product_universe ;;
+    drill_fields: [product_name]
   }
 
   dimension_group: purchase {
