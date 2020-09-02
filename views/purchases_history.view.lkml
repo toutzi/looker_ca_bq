@@ -357,6 +357,11 @@ view: purchases_history {
     sql: ${TABLE}.SECOND_ORDER_CUSTOMER_ID_MASTER ;;
   }
 
+  measure: Nbre_de_reachat {
+    type: count_distinct
+    sql: ${TABLE}.SECOND_ORDER_ID ;;
+  }
+
   measure: Nbre_contacts_maitres {
     type: count_distinct
     sql: ${TABLE}.CUSTOMER_ID_MASTER ;;
