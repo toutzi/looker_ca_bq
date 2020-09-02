@@ -28,7 +28,7 @@ view: store {
   dimension: store_name {
     type: string
     sql: ${TABLE}.store_name ;;
-    drill_fields : [xy_location, purchases_details.product_name ]
+    drill_fields : [xy_location, purchases_details.product_universe ]
   }
 
   measure: count {
