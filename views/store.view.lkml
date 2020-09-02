@@ -19,6 +19,12 @@ view: store {
     sql: ${TABLE}.longitude ;;
   }
 
+  dimension: xy_location {
+    type: location
+    sql_latitude:${latitude} ;;
+    sql_longitude:${longitude} ;;
+  }
+
   dimension: store_name {
     type: string
     sql: ${TABLE}.store_name ;;
