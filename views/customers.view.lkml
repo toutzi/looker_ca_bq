@@ -60,6 +60,13 @@ view: customers {
     sql: ${TABLE}.country ;;
   }
 
+  dimension: customer_age {
+    type: tier
+    tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+    style:integer
+    sql: ${TABLE}.customer_age ;;
+  }
+
   dimension: customer_id {
     type: number
     # hidden: yes
@@ -77,6 +84,7 @@ view: customers {
     value_format_name: id
     sql: ${TABLE}.customer_id_with_card ;;
   }
+
 
   dimension: customer_id_with_mail_optin {
     type: number
@@ -407,7 +415,7 @@ view: customers {
   measure: CA_total_clients {
     type: sum
     sql: ${TABLE}.CUSTOMER_VALUE ;;
-    value_format: "eur"
+    value_format: "euro"
   }
 
   measure: CA_total_mixite_non_null {
