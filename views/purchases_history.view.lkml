@@ -411,7 +411,7 @@ view: purchases_history {
 
   measure: Nbre_de_reacheteurs_first {
     type: count_distinct
-    sql: ${TABLE}.SECOND_ORDER_CUSTOMER_ID ;;
+    sql: ${TABLE}.SECOND_ORDER_CUSTOMER_ID_MASTER ;;
     filters: [first_product_universe: "-NULL", first_product_nature: "-NULL", first_product_nature: "N.R", first_product_universe_nb_orders: ">=50" ]
   }
 
