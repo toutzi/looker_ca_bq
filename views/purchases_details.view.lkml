@@ -578,4 +578,16 @@ view: purchases_details {
     filters: [is_purchase_in_ref_period: "Yes", top_product_10rk: "Yes"]
   }
 
+  measure: max_date {
+    type: date
+    sql: MAX(${purchase_date}) ;;
+    convert_tz: no
+  }
+
+  measure: min_date {
+    type: date
+    sql: MIN(${purchase_date}) ;;
+    convert_tz: no
+  }
+
 }
