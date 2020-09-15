@@ -44,9 +44,9 @@ view: customers {
     sql: ${TABLE}.cluster ;;
   }
 
-  dimension: cluster_details {
+  dimension: cluster_detail {
     type: string
-    sql: ${TABLE}.cluster_details ;;
+    sql: ${TABLE}.cluster_detail ;;
   }
 
   dimension: column63 {
