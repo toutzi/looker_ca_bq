@@ -285,7 +285,7 @@ view: purchases_details {
     timeframes: [
       raw,
       date,
-      time_of_day,
+      time,
       month,
       quarter,
       year
