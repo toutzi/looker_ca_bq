@@ -269,6 +269,7 @@ view: purchases_details {
     timeframes: [
       raw,
       date,
+      time,
       week,
       month,
       quarter,
@@ -428,6 +429,7 @@ view: purchases_details {
     type: sum
     sql: ${TABLE}.LINE_AMOUNT ;;
   }
+
 
   measure: frequence_d_achat {
     type: number
