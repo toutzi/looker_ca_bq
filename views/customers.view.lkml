@@ -44,6 +44,11 @@ view: customers {
     sql: ${TABLE}.cluster ;;
   }
 
+  dimension: cluster_details {
+    type: string
+    sql: ${TABLE}.cluster_details ;;
+  }
+
   dimension: column63 {
     type: string
     sql: ${TABLE}.Column63 ;;
