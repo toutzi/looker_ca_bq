@@ -280,20 +280,19 @@ view: purchases_details {
     sql: ${TABLE}.purchase_date ;;
   }
 
-  dimension_group: purchases_datetime {
+  dimension_group: purchase_datetime {
     type: time
     timeframes: [
       raw,
       date,
-      time,
-      week,
+      time_of_day,
       month,
       quarter,
       year
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.purchase_date ;;
+    sql: ${TABLE}.purchase_datetime ;;
   }
 
   dimension: purchase_type {
