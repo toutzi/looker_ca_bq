@@ -29,8 +29,14 @@ view: purchases_details {
 
   dimension: customer_id {
     type: string
+    link: {
+    label: "Google"
+    url: "http://www.google.com/search?id={{ value }}"
+    icon_url: "http://google.com/favicon.ico"
+    }
     # hidden: yes
     sql: ${TABLE}.customer_id ;;
+
   }
 
   dimension: customer_value {
