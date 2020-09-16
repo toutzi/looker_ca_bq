@@ -395,6 +395,15 @@ view: purchases_details {
     sql: ${TABLE}.with_sms ;;
   }
 
+  parameter: max_rank {
+    type: number
+  }
+
+  dimension: rank_limit {
+    type: number
+    sql: {% parameter max_rank%} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [product_name, store_group_name, store_name, customers.customer_id_with_mail]
