@@ -167,6 +167,7 @@ view: purchases_details {
   dimension: nb_buys {
     type: number
     sql: ${TABLE}.nb_buys ;;
+    drill_fields: [customer_id]
   }
 
   dimension: nb_buys_in_store {
