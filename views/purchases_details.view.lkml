@@ -293,6 +293,8 @@ view: purchases_details {
       raw,
       date,
       time,
+      day_of_week,
+      week,
       day_of_month,
       month,
       quarter,
