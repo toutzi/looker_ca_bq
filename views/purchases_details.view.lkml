@@ -520,6 +520,7 @@ view: purchases_details {
     type: sum
     sql: ${TABLE}.CUSTOMER_VALUE ;;
     filters: [mixity: "-NULL" ]
+    drill_fields: [customer_id]
    # html: {{ rendered_value | replace: ‘,’, ' ' | replace: ‘.’,‘,’ }} ;;
   }
 
