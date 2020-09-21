@@ -30,7 +30,7 @@ view: purchases_details {
   dimension: customer_id {
     type: string
     link: {
-    label: "Ysance"
+    label: "Detail CRM"
     url: "https://storage.googleapis.com/customers_analytics_demo/webinar_webpage/index.html?id={{ value }}"
     #icon_url: "http://google.com/favicon.ico"
     }
@@ -522,7 +522,7 @@ view: purchases_details {
     type: sum
     sql: ${TABLE}.CUSTOMER_VALUE ;;
     filters: [mixity: "-NULL" ]
-    drill_fields: [customer_id]
+    drill_fields: [customer_id, customers.customer_age, customers.gender, customers.has_loyalty_card, customers.cluster_detail]
    # html: {{ rendered_value | replace: ‘,’, ' ' | replace: ‘.’,‘,’ }} ;;
   }
 

@@ -223,6 +223,11 @@ view: customers {
     sql: ${TABLE}.loyalty_card ;;
   }
 
+  dimension: has_loyalty_card {
+    type: yesno
+    sql: ${loyalty_card} is not null ;;
+  }
+
   dimension: mixity {
     type: string
     sql: ${TABLE}.mixity ;;
