@@ -67,7 +67,7 @@ view: customers {
 
   dimension: customer_age {
     type: tier
-    tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+    tiers: [18, 30, 40, 50, 60, 70]
     style: interval
     sql: ${TABLE}.customer_age ;;
   }
