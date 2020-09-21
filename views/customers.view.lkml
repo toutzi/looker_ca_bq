@@ -68,7 +68,7 @@ view: customers {
   dimension: customer_age {
     type: tier
     tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
-    style: interval
+    style: integer
     sql: ${TABLE}.customer_age ;;
   }
 
@@ -221,6 +221,11 @@ view: customers {
   dimension: loyalty_card {
     type: string
     sql: ${TABLE}.loyalty_card ;;
+  }
+
+  dimension: has_loyalty_card {
+    type: yesno
+    sql: ${loyalty_card} is not null ;;
   }
 
   dimension: mixity {

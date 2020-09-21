@@ -522,7 +522,7 @@ view: purchases_details {
     type: sum
     sql: ${TABLE}.CUSTOMER_VALUE ;;
     filters: [mixity: "-NULL" ]
-    drill_fields: [customer_id]
+    drill_fields: [customer_id, customers.customer_age, customers.gender, customers.has_loyalty_card, customers.cluster_detail]
    # html: {{ rendered_value | replace: ‘,’, ' ' | replace: ‘.’,‘,’ }} ;;
   }
 
