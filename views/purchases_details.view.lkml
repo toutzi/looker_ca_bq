@@ -30,7 +30,7 @@ view: purchases_details {
   dimension: customer_id {
     type: string
     link: {
-    label: "Ysance"
+    label: "Detail CRM"
     url: "https://storage.googleapis.com/customers_analytics_demo/webinar_webpage/index.html?id={{ value }}"
     #icon_url: "http://google.com/favicon.ico"
     }
