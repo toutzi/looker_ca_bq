@@ -16,7 +16,7 @@ explore: customers {
 
   join: purchases_details {
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_many
     sql_on: CAST(${customers.customer_id}  as string) = ${purchases_details.customer_id} ;;
   }
 
