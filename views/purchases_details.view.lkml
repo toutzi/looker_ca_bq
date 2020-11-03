@@ -437,7 +437,7 @@ view: purchases_details {
     filters: [mixity: "MAIL"]
   }
 
-  measure: Nbre_clientss_mixtes {
+  measure: Nbre_clients_mixtes {
     type: count_distinct
     sql: ${TABLE}.CUSTOMER_ID ;;
     filters: [mixity: "mixte"]
