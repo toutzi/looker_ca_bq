@@ -22,7 +22,7 @@ explore: customers {
 
  join: purchases_history {
     type: left_outer
-    relationship: many_to_many
+    relationship: many_to_one
    sql_on: CAST(${customers.customer_id_master} as string) = ${purchases_history.customer_id_master} ;;
   }
 
